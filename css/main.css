@@ -102,6 +102,7 @@ a:hover {
     }
     nav ul li a {
         font-size: 26px;
+        font-weight: bold;
     }
     a:hover,
     a.active {
