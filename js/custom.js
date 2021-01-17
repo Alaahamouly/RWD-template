@@ -1,10 +1,14 @@
-/* global $ */
+// Caching The Scroll Top Element
 
-$(function () {
-    'use strict';
-    $('.info-list li').click(function(){
-        $(this).addClass('selected').siblings('li').removeClass('selected');
-        $('.info-content div').hide();
-        $('.' + $(this).data('class')).fadeIn();
-    });
+var scrollButton = $("#scroll-top");
+
+$(window).scroll(function() {
+    $(this).scrollTop() >= 80 ? scrollButton.fadeIn() : scrollButton.fadeOut();
+});
+
+// Click on Button to Scroll top
+
+scrollButton.on('click', function() {
+    $("html,body").animate({ scrollTop: 0 }, 0);
+    return false;
 });
